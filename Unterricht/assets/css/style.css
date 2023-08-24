@@ -1,0 +1,117 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+div {
+  padding: 10px;
+  text-align: center;
+}
+
+.parent-one {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  /* - fr teilt den Desktop in gleich große
+  - Teile ein, grundsätzlich kann man aber
+  -alle Units verwenden
+  - Shortcut für 3 Spalten: (3, 1fr) */
+  /* grid-template-columns: 500px 50% 5vw; */
+  grid-template-rows: 300px 50px;
+  gap: 10px;
+
+  align-items: center;
+}
+
+.parent-one div:nth-of-type(1) {
+  background-color: yellow;
+}
+
+.parent-one div:nth-of-type(2) {
+  background-color: deeppink;
+}
+
+.parent-one div:nth-of-type(3) {
+  background-color: blue;
+  justify-self: end;
+}
+
+.parent-one div:nth-of-type(4) {
+  background-color: green;
+}
+
+/* ! area */
+
+.parent-two {
+  display: grid;
+  grid-template-columns: 20% 50% 30%;
+  grid-template-rows: 50px 200px 30px;
+  grid-template-areas:
+    "header header"
+    "main aside"
+    "footer footer";
+
+  gap: 10px;
+}
+
+.parent-two div:nth-of-type(1) {
+  background-color: azure;
+  grid-area: header;
+}
+
+.parent-two div:nth-of-type(2) {
+  background-color: linen;
+  grid-area: main;
+}
+
+.parent-two div:nth-of-type(3) {
+  background-color: plum;
+  grid-area: aside;
+}
+
+.parent-two div:nth-of-type(4) {
+  background-color: palevioletred;
+  grid-area: footer;
+}
+
+/* ! grid colums und rows */
+
+.parent-three {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+.item {
+  background-color: lightsalmon;
+  padding: 10px;
+  text-align: center;
+}
+
+.item:nth-of-type(2) {
+  background-color: lightgreen;
+  grid-column: 2/4;
+}
+
+.item:nth-of-type(3) {
+  background-color: lightblue;
+  grid-column: 4/5;
+  grid-row: 1/5;
+}
+
+.item:nth-of-type(4) {
+  background-color: lightpink;
+  grid-column: 1/2;
+  grid-row: 4/5;
+}
+
+.item:nth-of-type(5) {
+  background-color: rgb(227, 213, 255);
+}
+
+.item:nth-of-type(1) {
+  grid-column: 1/2;
+  grid-row: 1/-1;
+}

@@ -1,0 +1,31 @@
+body {
+  color: white;
+  gap: 5px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 10vh 80vh 10vh;
+}
+
+header {
+  background-color: blue;
+  grid-column: 1/5;
+  grid-row: 1/2;
+}
+
+.green {
+  background-color: green;
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+
+main {
+  background-color: red;
+  grid-column: 2/5;
+  grid-row: 2/3;
+}
+
+footer {
+  background-color: purple;
+  grid-column: 1/5;
+  grid-row: 3/4;
+}
